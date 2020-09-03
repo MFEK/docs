@@ -6,6 +6,8 @@
 
 MFEQ is still very alpha, and many parts are missing. You can help!
 
+**[Why MFEQ?](https://github.com/mfeq/mfeq/blob/master/doc/Why.md)**
+
 ## Planned modules
 
 * [`Qglif`](https://github.com/mfeq/Qglif) (.glif editor w/Spiro support)
