@@ -46,7 +46,7 @@ Let's consider we want to make a cursive font. Here is how we would proceed, acc
 
 * Run Qmetadata. When it gets no argument, or the argument of a non-existent directory, it assumes we want a new font. So, we fill out a form.
 * We then run Qfontview and see empty squares. Clicking `A` launches Qglif with the command line `Qglif glyphs/A_.glif`.
-** Qglif calls Qmetadata as `Qmetadata metrics`. Qmetadata returns on stdout the em-size, ascender, descender, and x-height and cap-height if known based on the UFO metadata. Qglif draws guidelines.
+  * Qglif calls Qmetadata as `Qmetadata metrics`. Qmetadata returns on stdout the em-size, ascender, descender, and x-height and cap-height if known based on the UFO metadata. Qglif draws guidelines.
 * We start drawing our `A`. We decide to make it a single stroke. We press Ctrl-Shift-E, and Qglif launches Qstroke, saves the state of the glyph in the undoes list, and begins monitoring `A_.glif` for changes.
 * Qstroke, likewise, monitors `A_.glif`. If written out, it changes its display. Perhaps auto-saving of every action can be optionally considered. How daring are we? Will our `.glif` file's `<lib>` contain undoes? Perhaps!
 * The user settles on a stroke and presses Stroke. Qstroke writes and exits. Qglif dutifully reads from the disk.
