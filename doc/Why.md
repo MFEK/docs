@@ -74,6 +74,7 @@ thus:
 > > I don't think it's surprising that people who make hobby projects in a language that has
 > > correctness as a core design goal would have an attitude of wanting to assure correctness, even
 > > at the cost of development velocity. Not everyone wants to move fast and break things.
+
 > Sure, that's certainly one way to look at it. It helps to remember though that correctness isn't
 > free, and isn't a feature of the language, (although features of the language help create more
 > correct programs,) but is in its higher forms, once the Rust compiler and borrow checker are happy
