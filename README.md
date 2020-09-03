@@ -21,7 +21,11 @@ MFEQ is still very alpha, and many parts are missing. You can help!
 * `Qstroke` (use @skef's work to stroke glyphs provided on command line)
 * `Qopentype` (OpenType layout editor based on @simoncozens' ideas)
 
-## Planned libraries
+## Libraries
 
-* libglifparser (a .glif parser, right now vendorized in Qglif)
+* [libglifparser](https://github.com/mfeq/glifparser) (a .glif parser)
+
+### Planned
+
 * libskef (port of @skef's &laquo;Expand Stroke&raquo; feature to a reusable C API)
+* libufo (perhaps can use something on crates.io, parser for general UFO metadata)
