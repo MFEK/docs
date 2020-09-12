@@ -11,6 +11,9 @@ MFEQ is still very alpha, and many parts are missing. You can help!
 ## Modular programs
 
 * [`Qglif`](https://github.com/mfeq/Qglif) (.glif editor w/Spiro support)
+* [`Qmetadata`](https://github.com/mfeq/Qmetadata) (UFO metadata querier)
+  * <sub><sup>(Right now only helps draw ascender/descender in Qglif.)</sup></sub>
+
 
 ### Planned
 
@@ -18,7 +21,6 @@ MFEQ is still very alpha, and many parts are missing. You can help!
 * `Qtransform` (transform, skew glyphs w/CLI options / GUI)
 * `Qfontview` (a launcher for Qglif that displays all glyphs)
 * `Qinterpolate` (an interpolation confirmer / tester)
-* `Qmetadata` (UFO metadata)
 * `Qkern` (kerning editor)
 * `Qmetrics` (load UFO file into HarfBuzz and output typed text)
 * `Qstroke` (use @skef's work to stroke glyphs provided on command line)
@@ -28,11 +30,14 @@ MFEQ is still very alpha, and many parts are missing. You can help!
 ## Libraries
 
 * [libglifparser](https://github.com/mfeq/glifparser) (a .glif parser)
+  * <sub><sup>(We need this because Norad has no support for `<lib>` in `.glif` files, and due to how they went about implementing Norad, fixing that is trickier than having my own glyph parser. Furthermore, as I plan to support Spiro, B-Splines, etc., through UFO format extensions, I should have one anyway.)</sup></sub>
+* [MFEQ Norad](https://github.com/mfeq/norad) (general UFO parser based on upstream Norad tweaked to play nice with `libglifparser`)
+* [MFEQ IPC](https://github.com/mfeq/norad) (_very_ basic inter-process communication functions)
 
 ### Planned
 
 * libskef (port of @skef's &laquo;Expand Stroke&raquo; feature to a reusable C API)
-* libufo (perhaps can use something on crates.io, parser for general UFO metadata)
+* spiro-rs (port of libspiro to Rust, probably will be done via `bindgen`)
 
 # Flow
 
