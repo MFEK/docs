@@ -11,9 +11,9 @@ MFEQ is still very alpha, and many parts are missing. You can help!
 ## Modular programs
 
 * [`Qglif`](https://github.com/mfeq/Qglif) (.glif editor w/Spiro support)
+* [`Qstroke`](https://github.com/mfeq/Qstroke) (currently only supports pattern-along-path. Needs import of functions from FontForge)
 * [`Qmetadata`](https://github.com/mfeq/Qmetadata) (UFO metadata querier)
   * <sub><sup>(Right now only helps draw ascender/descender in Qglif.)</sup></sub>
-
 
 ### Planned
 
@@ -23,7 +23,6 @@ MFEQ is still very alpha, and many parts are missing. You can help!
 * `Qinterpolate` (an interpolation confirmer / tester)
 * `Qkern` (kerning editor)
 * `Qmetrics` (load UFO file into HarfBuzz and output typed text)
-* `Qstroke` (use @skef's work to stroke glyphs provided on command line)
 * `Qopentype` (OpenType layout editor based on @simoncozens' ideas)
 * `Qexport` (frontend to fontmake)
 
