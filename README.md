@@ -8,6 +8,8 @@ MFEK is still very alpha, and many parts are missing. You can help!
 
 **[Why MFEK?](https://github.com/MFEK/docs/blob/master/doc/Why.md)**
 
+[To pull all modules, why not use this script?](https://raw.githubusercontent.com/MFEK/docs/master/blob/pull_all_modules.sh)
+
 ## Modular programs
 
 * [`MFEKglif`](https://github.com/MFEK/glif) (.glif editor w/Spiro support)
