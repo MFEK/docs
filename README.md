@@ -38,7 +38,7 @@ MFEK is still very alpha, and many parts are missing. You can help!
 * libskef (port of @skef's &laquo;Expand Stroke&raquo; feature to a reusable C API)
 * spiro-rs (port of libspiro to Rust, probably will be done via `bindgen`)
 
-# Flow
+## Flow
 
 MFEK's inter-process communication (IPC) will be minimal. UFO is the format, and most of the time, MFEK modules are going to be starting with just what's on the disk. We can put the planned MFEK modules onto a linear spectrum between _forms_ and _canvases_. The quintessential form is MFEKdesignspace: it is purely a form. The user inputs the names of their UFO masters, their axes, instances, and rules, and out comes a rigidly hierarchical `.designspace` file for consumption by `fontmake` and MFEKinterpolate. As a form, once it's filled out, it's done. We may need to go back and add more rules or instances or what have you, but it's essentially one run and done. Meanwhile, the quintessential canvas is MFEKglif: the user draws their glyphs and can spend as long as they want doing so, and will likely have multiple MFEKglif instances running in parallel. As long as you're working on the font, MFEKglif will probably be open most of the time.
 
