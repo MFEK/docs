@@ -1,6 +1,6 @@
 # Modular Font Editor K
 
-![](https://raw.githubusercontent.com/MFEK/docs/master/blob/logo.png)
+<img src="https://raw.githubusercontent.com/MFEK/docs/master/blob/logo.png" width="250">
 
 **Modular Font Editor K** (MFEK) is an open source modular font editor. It attempts to apply the Unix adage that each program should do one thing and do it well to a GUI font editor.
 
@@ -60,3 +60,12 @@ Let's consider we want to make a cursive font. Here is how we would proceed, acc
 Notice that while MFEK grows in size, we can offload one or more steps to FontForge/`fontmake` scripts. So even with only one or two programs, MFEK is immediately useful&mdash;we don't need the entire thing done to start using it in production. In fact, I plan to make fonts while I work on MFEK, and use less and less of FontForge over time.
 
 But our goal is not to totally abandon FontForge, or AFDKO, or fontmake. No, rather, we want a new GUI. But to build our modular font editor, we'll take the good parts out of everything. FontForge is great at dealing with legacy formats: we can imagine a MFEKconvert based on a C library sourced from FontForge code, which calls either that, fontmake, or AFDKO, based on the type of conversion requested.
+
+## Thanks to…
+
+* Matthew Blanchard;
+* Caleb Maclennan;
+* Eli Heuer;
+* Georg Duffner (for EB Garamond ExtraBold, used in our logo);
+* All organization members and module authors and contributors!
+* All developers of open source font software and fonts!
