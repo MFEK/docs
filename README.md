@@ -13,7 +13,7 @@ MFEK is still very alpha, and many parts are missing. You can help!
 ## Modular programs
 
 * [`MFEKglif`](https://github.com/MFEK/glif) (.glif editor w/Spiro support)
-* [`MFEKstroke`](https://github.com/MFEK/stroke) (currently only supports pattern-along-path. Needs import of functions from FontForge)
+* [`MFEKstroke`](https://github.com/MFEK/stroke) (an «Expand Stroke», «Pattern-Along-Path» and «Variable Width Stroke» implementation in one)
 * [`MFEKmetadata`](https://github.com/MFEK/metadata) (UFO metadata querier)
   * <sub><sup>(Right now only helps draw ascender/descender in MFEKglif.)</sup></sub>
 
