@@ -32,7 +32,7 @@ MFEK is still very alpha, and many parts are missing. You can help!
 
 * [libglifparser](https://github.com/MFEK/glifparser) (a .glif parser)
   * <sub><sup>(We need this because Norad has no support for `<lib>` in `.glif` files, and due to how they went about implementing Norad, fixing that is trickier than having my own glyph parser. Furthermore, as I plan to support Spiro, B-Splines, etc., through UFO format extensions, I should have one anyway.)</sup></sub>
-* [MFEK Norad](https://github.com/MFEK/norad) (general UFO parser based on upstream Norad tweaked to play nice with `libglifparser`)
+* [MFEKmath](https://github.com/MFEK/math.rlib) (algorithms for `MFEKstroke`, a Piecewise Bézier spline implementation, and more)
 * [MFEK IPC](https://github.com/MFEK/ipc) (_very_ basic inter-process communication functions)
 
 ### Planned
