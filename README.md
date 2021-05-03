@@ -8,7 +8,10 @@ MFEK is still very alpha, and many parts are missing. You can help!
 
 **[Why MFEK?](https://github.com/MFEK/docs/blob/master/doc/Why.md)**
 
-[To pull all modules, why not use this script?](https://raw.githubusercontent.com/MFEK/docs/master/blob/pull_all_modules.sh)
+To pull all modules, why not use this script?
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/MFEK/docs/master/blob/pull_all_modules.sh)"
+
 
 ## Modular programs
 
@@ -56,7 +59,7 @@ Let's consider we want to make a cursive font. Here is how we would proceed, acc
 * We start drawing our `A`. We decide to make it a single stroke. We press Ctrl-Shift-E, and MFEKglif launches MFEKstroke, saves the state of the glyph in the undoes list, and begins monitoring `A_.glif` for changes.
 * MFEKstroke, likewise, monitors `A_.glif`. If written out, it changes its display. Perhaps auto-saving of every action can be optionally considered. How daring are we? Will our `.glif` file's `<lib>` contain undoes? Perhaps!
 * The user settles on a stroke and presses Stroke. MFEKstroke writes and exits. MFEKglif dutifully reads from the disk.
-* And so on for the basic Latin. It's come time to add an OpenType table. Launch `MFEKopentype`, which will build the font and use HarfBuzz to display it, and auto-update as the user writes their OpenType Layout code. This could be FEA, but it also could be Simon Cozens' FEE, an extended FEA syntax. MFEKopentype must be more conservative and only reload the font upon saving of any glyph, not every small action in MFEKglif.
+* And so on for the basic Latin. It's come time to add an OpenType table. Launch `MFEKopentype`, which will build the font and use HarfBuzz to display it, and auto-update as the user writes their OpenType Layout code. This could be FEA, but it also could be Simon Cozens' [FEZ](https://github.com/simoncozens/fontFeatures), a higher level FEA-like syntax. MFEKopentype must be more conservative and only reload the font upon saving of any glyph, not every small action in MFEKglif.
 * Finally, we have something we think servicable. In MFEKfontview we press Generate, which calls MFEKexport. We're not writing a TrueType generator here, it's a simple form that calls `fontmake` with appropriate arguments.
 
 Notice that while MFEK grows in size, we can offload one or more steps to FontForge/`fontmake` scripts. So even with only one or two programs, MFEK is immediately useful&mdash;we don't need the entire thing done to start using it in production. In fact, I plan to make fonts while I work on MFEK, and use less and less of FontForge over time.
