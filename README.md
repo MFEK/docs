@@ -15,33 +15,35 @@ To pull all modules, why not use this script?
 
 ## Modular programs
 
-* [`MFEKglif`](https://github.com/MFEK/glif) (.glif editor w/Spiro support)
-* [`MFEKstroke`](https://github.com/MFEK/stroke) (an «Expand Stroke», «Pattern-Along-Path» and «Variable Width Stroke» implementation in one)
+* [`MFEKglif`](https://github.com/MFEK/glif) (.glif editor w/planned Spiro support)
+* [`MFEKstroke`](https://github.com/MFEK/stroke) (applies different kinds of strokes to .glif files with open contours)
 * [`MFEKmetadata`](https://github.com/MFEK/metadata) (UFO metadata querier)
   * <sub><sup>(Right now only helps draw ascender/descender in MFEKglif.)</sup></sub>
+* [`MFEKabout`](https://github.com/MFEK/about) (MFEK's about screen)
 
 ### Planned
 
+* `MFEKufo` (a launcher for MFEKglif that displays all glyphs)
 * `MFEKdesignspace` (design space XML creator/editor)
 * `MFEKtransform` (transform, skew glyphs w/CLI options / GUI)
-* `MFEKfontview` (a launcher for MFEKglif that displays all glyphs)
 * `MFEKinterpolate` (an interpolation confirmer / tester)
-* `MFEKkern` (kerning editor)
-* `MFEKmetrics` (load UFO file into HarfBuzz and output typed text)
+* `MFEKmetrics` (load UFO file into HarfBuzz and output typed text, edit horizontal/vertical kerning and bearings)
 * `MFEKopentype` (OpenType layout editor based on @simoncozens' ideas)
 * `MFEKexport` (frontend to fontmake)
 
 ## Libraries
 
-* [libglifparser](https://github.com/MFEK/glifparser) (a .glif parser)
+* [`glifparser.rlib`](https://github.com/MFEK/glifparser.rlib) (a .glif parser)
+  * [`integer-or-float.rlib`](https://github.com/MFEK/integer_or_float.rlib) (implements a .glif data type)
   * <sub><sup>(We need this because Norad has no support for `<lib>` in `.glif` files, and due to how they went about implementing Norad, fixing that is trickier than having my own glyph parser. Furthermore, as I plan to support Spiro, B-Splines, etc., through UFO format extensions, I should have one anyway.)</sup></sub>
-* [MFEKmath](https://github.com/MFEK/math.rlib) (algorithms for `MFEKstroke`, a Piecewise Bézier spline implementation, and more)
-* [MFEK IPC](https://github.com/MFEK/ipc) (_very_ basic inter-process communication functions)
+* [`icu-data.rlib`](https://github.com/MFEK/icu-data.rlib) (Unicode ICU data without C libicu, currently only encodings)
+* [`ipc.rlib`](https://github.com/MFEK/ipc.rlib) (_very_ basic inter-process communication functions)
+* [`math.rlib`](https://github.com/MFEK/math.rlib) (implements algorithms for MFEKstroke: Pattern-Along-Path, Variable/Constant Width Stroke, etc.)
 
 ### Planned
 
-* libskef (port of @skef's &laquo;Expand Stroke&raquo; feature to a reusable C API)
-* spiro-rs (port of libspiro to Rust, probably will be done via `bindgen`)
+* libskef (Port of @skef's &laquo;Expand Stroke&raquo; feature to a reusable C API. Will likely also require `SplineSet` type from FontForge.)
+* spiro-rs (Port of libspiro to Rust, probably will be done via `bindgen`)
 
 ## Flow
 
@@ -54,13 +56,13 @@ Most of our IPC can just be `system` calls (launching new processes). At our mos
 Let's consider we want to make a cursive font. Here is how we would proceed, according to my vision:
 
 * Run MFEKmetadata. When it gets no argument, or the argument of a non-existent directory, it assumes we want a new font. So, we fill out a form.
-* We then run MFEKfontview and see empty squares. Clicking `A` launches MFEKglif with the command line `MFEKglif glyphs/A_.glif`.
+* We then run MFEKufo and see empty squares. Clicking `A` launches MFEKglif with the command line `MFEKglif glyphs/A_.glif`.
   * MFEKglif calls MFEKmetadata as `MFEKmetadata metrics`. MFEKmetadata returns on stdout the em-size, ascender, descender, and x-height and cap-height if known based on the UFO metadata. MFEKglif draws guidelines.
 * We start drawing our `A`. We decide to make it a single stroke. We press Ctrl-Shift-E, and MFEKglif launches MFEKstroke, saves the state of the glyph in the undoes list, and begins monitoring `A_.glif` for changes.
 * MFEKstroke, likewise, monitors `A_.glif`. If written out, it changes its display. Perhaps auto-saving of every action can be optionally considered. How daring are we? Will our `.glif` file's `<lib>` contain undoes? Perhaps!
 * The user settles on a stroke and presses Stroke. MFEKstroke writes and exits. MFEKglif dutifully reads from the disk.
 * And so on for the basic Latin. It's come time to add an OpenType table. Launch `MFEKopentype`, which will build the font and use HarfBuzz to display it, and auto-update as the user writes their OpenType Layout code. This could be FEA, but it also could be Simon Cozens' [FEZ](https://github.com/simoncozens/fontFeatures), a higher level FEA-like syntax. MFEKopentype must be more conservative and only reload the font upon saving of any glyph, not every small action in MFEKglif.
-* Finally, we have something we think servicable. In MFEKfontview we press Generate, which calls MFEKexport. We're not writing a TrueType generator here, it's a simple form that calls `fontmake` with appropriate arguments.
+* Finally, we have something we think servicable. In MFEKufo we press Generate, which calls MFEKexport. We're not writing a TrueType generator here, it's a simple form that calls `fontmake` with appropriate arguments.
 
 Notice that while MFEK grows in size, we can offload one or more steps to FontForge/`fontmake` scripts. So even with only one or two programs, MFEK is immediately useful&mdash;we don't need the entire thing done to start using it in production. In fact, I plan to make fonts while I work on MFEK, and use less and less of FontForge over time.
 
@@ -72,5 +74,5 @@ But our goal is not to totally abandon FontForge, or AFDKO, or fontmake. No, rat
 * Caleb Maclennan;
 * Eli Heuer;
 * Georg Duffner (for EB Garamond ExtraBold, used in our logo);
-* All organization members and module authors and contributors!
+* All organization members, module authors and contributors!
 * All developers of open source font software and fonts!
