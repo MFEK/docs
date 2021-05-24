@@ -12,6 +12,7 @@ To pull all modules, why not use this script?
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/MFEK/docs/master/blob/pull_all_modules.sh)"
 
+To see who wrote an MFEK module, check its `AUTHORS` file. The two main authors of MFEK are Fredrick R. Brennan (@ctrlcctrlv) and Matthew Blanchard (@MatthewBlanchard).
 
 ## Modular programs
 
@@ -76,6 +77,8 @@ But our goal is not to totally abandon FontForge, or AFDKO, or fontmake. No, rat
 
 * Matthew Blanchard;
 * Caleb Maclennan;
+* Dave Crossland;
+* Simon Cozens;
 * Eli Heuer;
 * Georg Duffner (for EB Garamond ExtraBold, used in our logo);
 * All organization members, module authors and contributors!
