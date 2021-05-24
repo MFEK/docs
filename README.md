@@ -18,7 +18,6 @@ To pull all modules, why not use this script?
 * [`MFEKglif`](https://github.com/MFEK/glif) (.glif editor w/planned Spiro support)
 * [`MFEKstroke`](https://github.com/MFEK/stroke) (applies different kinds of strokes to .glif files with open contours)
 * [`MFEKmetadata`](https://github.com/MFEK/metadata) (UFO metadata querier)
-  * <sub><sup>(Right now only helps draw ascender/descender in MFEKglif.)</sup></sub>
 * [`MFEKabout`](https://github.com/MFEK/about) (MFEK's about screen)
 
 ### Planned
