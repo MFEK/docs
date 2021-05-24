@@ -30,6 +30,11 @@ To pull all modules, why not use this script?
 * `MFEKopentype` (OpenType layout editor based on @simoncozens' ideas)
 * `MFEKexport` (frontend to fontmake)
 
+#### Far off
+
+* `MFEKpshints` (Add PostScript hints to glyphs and test them)
+* `MFEKtruetype` (basically would be an open source version of Visual TrueType (VTT))
+
 ## Libraries
 
 * [`glifparser.rlib`](https://github.com/MFEK/glifparser.rlib) (a .glif parser)
