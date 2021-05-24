@@ -1,6 +1,10 @@
-# Why MFEQ?
+(_This prospectus of the project was written in September 2020. Since then some things have changed,
+including the degree to which we collaborate with the Runebender project; while we don't contribute
+to Runebender itself, we do contribute to a few of its libraries like `kurbo` and `norad`._)
 
-My [Modular Font Editor Q](https://github.com/mfeq/mfeq) project, despite its roadmap, has mystified
+# Why MFEK?
+
+My [Modular Font Editor K](https://github.com/MFEK/docs) project, despite its roadmap, has mystified
 some. Why work on it at all, and if I insist, why not work on the Runebender project?
 
 I aim to explain myself.
@@ -57,7 +61,7 @@ build!
 
 First of all, I have no problem with authors of Runebender and wish them all the success in the
 world. This success however has not come yet, FontForge remains dominant. At the time I founded the
-MFEQ project, Runebender had no commits to it for two months. I was told that actually commits are
+MFEK project, Runebender had no commits to it for two months. I was told that actually commits are
 happening ... to the UI layer of Runebender. Incredibly, Runebender has an entirely new UI toolkit,
 their version of FontForge's GDraw (hopefully without any of its flaws), they call it Druid. That's
 not all, they also have an entirely new path rasterizer, called Piet.
@@ -74,7 +78,7 @@ thus:
 > > I don't think it's surprising that people who make hobby projects in a language that has
 > > correctness as a core design goal would have an attitude of wanting to assure correctness, even
 > > at the cost of development velocity. Not everyone wants to move fast and break things.
-
+>
 > Sure, that's certainly one way to look at it. It helps to remember though that correctness isn't
 > free, and isn't a feature of the language, (although features of the language help create more
 > correct programs,) but is in its higher forms, once the Rust compiler and borrow checker are happy
@@ -143,3 +147,6 @@ at the end of the day _correct_, we just need a full throated embrace of it. We 
 Fred Brennan
 
 3 September 2020
+
+<!-- vim: textwidth=100
+-->
