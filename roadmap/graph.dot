@@ -1,0 +1,115 @@
+digraph G {
+ graph [fontname = "Nimbus-Roman", fontsize=11];
+ node [fontname = "Nimbus-Roman", fontsize=11];
+ edge [fontname = "Nimbus-Roman", style=solid, fontsize=11];
+MFEKinit[style=dashed];
+ipc[style=dashed];
+feaparser[style=dashed];
+MFEKmetadata[style=dashed];
+MFEKufo[style=dotted];
+MFEKdesignspace[style=dotted];
+MFEKpathops[style=dotted];
+MFEKopentype[style=dotted];
+MFEKmetrics[style=dotted];
+MFEKexport[style=dotted];
+MFEKtthint[penwidth=0];
+MFEKpshint[penwidth=0];
+
+spirosys[label=<<FONT>spiro-sys</FONT><BR/><FONT POINT-SIZE="10"><I>(c2rust)</I></FONT>>]; //rlib
+skiacpp[label=<<FONT>Skia</FONT><BR/><FONT POINT-SIZE="10"><I>(c++ dylib)</I></FONT>>];
+imgui[label=<<FONT>Dear Imgui</FONT><BR/><FONT POINT-SIZE="10"><I>(c dylib)</I></FONT>>];
+SDL2[label=<<FONT>SDL2</FONT><BR/><FONT POINT-SIZE="10"><I>(c dylib)</I></FONT>>];
+rafxvulkan[label=<rafx<BR/><FONT POINT-SIZE="10"><I>rafx-vulkan</I></FONT>>]; //rlib
+vulkan[label=<<FONT>libvulkan.so</FONT><BR/><FONT POINT-SIZE="10"><I>(c dylib…<FONT POINT-SIZE="8">Vulkan SDK?</FONT>)</I></FONT>>];
+MFEKtthint[label=<<FONT>MFEKtthint</FONT><BR/><FONT POINT-SIZE="10"><I>(FOSS VTT?)</I></FONT>>];
+MFEKpshint[label=<<FONT>MFEKpshint</FONT><BR/><FONT POINT-SIZE="10"><I>(unnecessary?)</I></FONT>>];
+"math" -> "skia-safe"; //rlib
+"skia-safe" -> skiacpp; //rlib
+"math" -> "glifparser"; //rlib
+"math" -> "kurbo"; //rlib
+"math" -> "flo_curves"; //rlib
+"MFEKpathops" -> "math" [color="#cc0000"]; //rlib
+"MFEKstroke" -> "math" [color="#cc0000"]; //rlib
+"MFEKglif" -> "math" [color="#cc0000"]; //rlib
+"MFEKglif" -> "MFEKmetadata" [penwidth=3.5];
+"MFEKpathops" -> "glifparser" [color="#cc0000"]; //rlib
+"MFEKstroke" -> "glifparser" [color="#cc0000"]; //rlib
+"MFEKglif" -> "glifparser" [color="#cc0000"]; //rlib
+"MFEKinit" -> "glifparser" [color="#cc0000"]; //rlib
+"MFEKinit" -> "MFEKmetadata" [penwidth=3.5];
+"MFEKufo" -> "MFEKinit" [penwidth=3.5];
+"MFEKufo" -> "MFEKglif" [penwidth=3.5];
+"MFEKglif" -> "MFEKufo" [penwidth=3.5];
+"MFEKglif" -> "ipc" [color="#cc0000"]; //rlib
+"MFEKufo" -> "ipc" [color="#cc0000"]; //rlib
+"MFEKmetadata" -> "glifparser" [color="#cc0000"]; //rlib
+"MFEKpathops" -> "flo_curves" [color="#cc0000"]; //rlib
+"glifrenderer" -> "glifparser"; //rlib
+"glifrenderer" -> "math"; //rlib
+"glifrenderer" -> "skia-safe"; //rlib
+"MFEKufo" -> "norad" [color="#cc0000"]; //rlib
+"MFEKmetadata" -> "norad" [color="#cc0000"]; //rlib
+"MFEKinit" -> "norad" [color="#cc0000"]; //rlib
+"MFEKstroke" -> "skia-safe" [color="#cc0000"]; //rlib
+"MFEKglif" -> "skia-safe" [color="#cc0000"]; //rlib
+"MFEKpathops" -> "skia-safe" [color="#cc0000"]; //rlib
+"MFEKpathops" -> "kurbo" [color="#cc0000"]; //rlib
+"imgui-skia\n-renderer" -> "skia-safe"; //rlib
+"MFEKglif" -> "MFEKinit" [penwidth=3.5];
+"MFEKufo" -> "MFEKstroke" [penwidth=3.5];
+"MFEKufo" -> "MFEKmetadata" [penwidth=3.5];
+"MFEKufo" -> "MFEKpathops" [penwidth=3.5];
+"MFEKglif" -> "glifrenderer" [color="#cc0000"]; //rlib
+"MFEKufo" -> "glifrenderer" [color="#cc0000"]; //rlib
+"MFEKglif" -> "imgui-skia\n-renderer" [color="#cc0000"]; //rlib
+"MFEKufo" -> "imgui-skia\n-renderer" [color="#cc0000"]; //rlib
+"imgui-skia\n-renderer" -> "imgui-rs"; //rlib
+"imgui-skia\n-renderer" -> "skulpin"; //rlib
+"skulpin" -> "skia-safe"; //rlib
+"skulpin" -> "sdl2"; //rlib
+"skulpin" -> rafxvulkan -> vulkan; //rlib
+"sdl2" -> SDL2; //rlib
+"imgui-rs" -> imgui; //rlib
+"MFEKufo" -> "MFEKabout" [penwidth=3.5];
+"MFEKabout";// -> "imgui-skia\n-renderer"; //rlib
+"glifparser" -> "spiro"; //rlib
+"spiro" -> spirosys; //rlib
+"MFEKmetrics" -> "imgui-skia\n-renderer" [color="#cc0000"]; //rlib
+"MFEKmetrics" -> "MFEKmetadata" [penwidth=3.5];
+"MFEKmetrics" -> "MFEKopentype" [penwidth=3.5];
+"MFEKmetrics" -> "glifrenderer" [color="#cc0000"]; //rlib
+"MFEKmetrics" -> "glifparser" [color="#cc0000"]; //rlib
+"MFEKmetrics" -> "feaparser" [color="#cc0000"]; //rlib
+"MFEKmetrics" -> "ipc" [color="#cc0000"]; //rlib
+"MFEKdesignspace" -> "MFEKufo" [penwidth=3.5];
+"MFEKdesignspace" -> "MFEKinit" [penwidth=3.5];
+"MFEKdesignspace" -> "MFEKmetadata" [penwidth=3.5];
+"MFEKdesignspace" -> "ipc" [color="#cc0000"]; //rlib
+"MFEKdesignspace" -> "MFEKmetrics" [penwidth=3.5];
+"MFEKdocs";
+"MFEKabout" -> "imgui-skia\n-renderer"; //rlib
+"MFEKopentype" -> "imgui-skia\n-renderer"; //rlib
+"MFEKopentype" -> "feaparser" [color="#cc0000"]; //rlib
+"MFEKopentype" -> "norad" [color="#cc0000"]; //rlib
+"MFEKopentype" -> "glifparser" [color="#cc0000"]; //rlib
+"MFEKufo" -> "MFEKexport" [penwidth=3.5];
+"MFEKufo" -> "MFEKmetrics" [penwidth=3.5];
+"MFEKmetrics" -> "MFEKglif" [penwidth=3.5];
+"MFEKdesignspace" -> "MFEKexport" [penwidth=3.5];
+"MFEKexport" -> "glifparser" [color="#cc0000"]; //rlib
+"MFEKexport" -> "math" [color="#cc0000"]; //rlib
+"MFEKexport" -> "imgui-skia\n-renderer" [color="#cc0000"]; //rlib
+
+MFEKtthint -> "imgui-skia\n-renderer" [color="#cc0000"]; //rlib
+MFEKpshint -> "imgui-skia\n-renderer" [color="#cc0000"]; //rlib
+MFEKtthint -> "glifparser" [color="#cc0000"]; //rlib
+MFEKpshint -> "glifparser" [color="#cc0000"]; //rlib
+MFEKtthint -> "glifrenderer" [color="#cc0000"]; //rlib
+MFEKpshint -> "glifrenderer" [color="#cc0000"]; //rlib
+"MFEKglif" -> MFEKtthint [penwidth=3.5];
+"MFEKglif" -> MFEKpshint [penwidth=3.5];
+
+labelloc="t"
+fontsize=32
+label=<“but that’ll take years!”: the MFEK roadmap<BR/><FONT POINT-SIZE="20">©2021 Fredrick R. Brennan &amp; Modular Font Editor K Authors</FONT>>
+}
