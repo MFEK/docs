@@ -14,6 +14,17 @@ To pull all modules, why not use this script?
 
 To see who wrote an MFEK module, check its `AUTHORS` file. The two main authors of MFEK are Fredrick R. Brennan (@ctrlcctrlv) and Matthew Blanchard (@MatthewBlanchard).
 
+## Current roadmap as of 2021-11-02
+![Current roadmap as of 2021-11-02](https://raw.githubusercontent.com/MFEK/docs/master/roadmap/roadmap.png)
+### Roadmap key
+* Dotted line around module name — module not started.
+* Dashed line around module name — module started, yet far from completion.
+* No line around module name — module is still far from being begun, and may indeed be unnecessary and never be begun.
+* A bold black arrow represents a program calling a program.
+* A red arrow represents a program including a library.
+* A black arrow represents a library including a library.
+* All libraries and programs are assumed to be in Rust unless noted otherwise.
+
 ## Modular programs
 
 * [`MFEKglif`](https://github.com/MFEK/glif) (.glif editor w/planned Spiro support)
