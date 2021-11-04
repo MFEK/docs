@@ -37,8 +37,7 @@ To see who wrote an MFEK module, check its `AUTHORS` file. The two main authors 
 * `MFEKufo` (a launcher for MFEKglif that displays all glyphs)
 * `MFEKdesignspace` (design space XML creator/editor)
 * `MFEKtransform` (transform, skew glyphs w/CLI options / GUI)
-* `MFEKinterpolate` (an interpolation confirmer / tester)
-* `MFEKmetrics` (load UFO file into HarfBuzz and output typed text, edit horizontal/vertical kerning and bearings)
+* `MFEKmetrics` (load UFO file into HarfBuzz and output typed text, edit horizontal/vertical kerning and bearings, test interpolation)
 * `MFEKopentype` (OpenType layout editor based on @simoncozens' ideas)
 * `MFEKexport` (frontend to fontmake)
 
