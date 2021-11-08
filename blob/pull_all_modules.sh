@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pull all current MFEK modules! Latest version @ https://github.com/MFEK/docs/
 
-MODULES=("glif" "stroke" "metadata")
+MODULES=("glif" "stroke" "metadata" "init" "about")
 
 for m in ${MODULES[@]}; do
 	if [ ! -d MFEK"$m" ]; then
