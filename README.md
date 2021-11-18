@@ -83,6 +83,10 @@ Notice that while MFEK grows in size, we can offload one or more steps to FontFo
 
 But our goal is not to totally abandon FontForge, or AFDKO, or fontmake. No, rather, we want a new GUI. But to build our modular font editor, we'll take the good parts out of everything. FontForge is great at dealing with legacy formats: we can imagine a MFEKconvert based on a C library sourced from FontForge code, which calls either that, fontmake, or AFDKO, based on the type of conversion requested.
 
+## Code of Conduct (CoC)
+
+See [`CODE_OF_CONDUCT.md`](https://github.com/MFEK/docs/blob/master/CODE_OF_CONDUCT.md). The MFEK CoC there, last updated 17<sup>th</sup> November 2021, is that of the whole organization and all of the repositories and communication channels under its umbrella.
+
 ## Thanks to…
 
 * Matthew Blanchard;
@@ -92,4 +96,4 @@ But our goal is not to totally abandon FontForge, or AFDKO, or fontmake. No, rat
 * Eli Heuer;
 * Georg Duffner (for EB Garamond ExtraBold, used in our logo);
 * All organization members, module authors and contributors!
-* All developers of open source font software and fonts!
+* All developers of open source font-related software and fonts!
