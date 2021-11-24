@@ -28,6 +28,7 @@ To see who wrote an MFEK module, check its `AUTHORS` file. The two main authors 
 ## Modular programs
 
 * [`MFEKglif`](https://github.com/MFEK/glif) (.glif editor w/planned Spiro support)
+* [`MFEKpathops`](https://github.com/MFEK/pathops) (applies different kinds of operations to .glif paths)
 * [`MFEKstroke`](https://github.com/MFEK/stroke) (applies different kinds of strokes to .glif files with open contours)
 * [`MFEKmetadata`](https://github.com/MFEK/metadata) (UFO metadata querier)
 * [`MFEKabout`](https://github.com/MFEK/about) (MFEK's about screen)
@@ -36,7 +37,6 @@ To see who wrote an MFEK module, check its `AUTHORS` file. The two main authors 
 
 * `MFEKufo` (a launcher for MFEKglif that displays all glyphs)
 * `MFEKdesignspace` (design space XML creator/editor)
-* `MFEKtransform` (transform, skew glyphs w/CLI options / GUI)
 * `MFEKmetrics` (load UFO file into HarfBuzz and output typed text, edit horizontal/vertical kerning and bearings, test interpolation)
 * `MFEKopentype` (OpenType layout editor based on @simoncozens' ideas)
 * `MFEKexport` (frontend to fontmake)
