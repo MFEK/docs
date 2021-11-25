@@ -1,8 +1,5 @@
-(_This prospectus of the project was written in September 2020. Since then some things have changed,
-including the degree to which we collaborate with the Runebender project; while we don't contribute
-to Runebender itself, we do contribute to a few of its libraries like `kurbo` and `norad`._)
-
-# Why MFEK?
+# Why?
+### Why MFEK?
 
 My [Modular Font Editor K](https://github.com/MFEK/docs) project, despite its roadmap, has mystified
 some. Why work on it at all, and if I insist, why not work on the Runebender project?
@@ -12,8 +9,17 @@ I aim to explain myself.
 Many have tried to replace FontForge&mdash;all have failed. I might fail, in fact, history says I
 probably will. Yet, the current state of affairs is so bad I feel I must try.
 
-# Why we need a new free software font editor
+# Updates to the status quo since this was written
+(Update May 2021: _This prospectus of the project was written in September 2020. Since then some
+things have changed, including the degree to which we collaborate with the Runebender project; while
+we don't contribute to Runebender itself, we do contribute to a few of its libraries like `kurbo`
+and `norad`._)
 
+(Update November 2021: _Our collaboration with the Rust ecosystem mentioned earlier in the year has
+continued thankfully, and `norad`, `flo_curves` and other crates have even made changes with our
+project in mind._ ♥)
+
+# Why we need a new free software font editor
 Progress on FontForge has ground to a halt, and often I felt I was the only one interested in
 continuing to make progress. It's not hard to understand why this has happened. Maintaining
 FontForge is _hard_. Adding new features to it is harder. It is written in a language fewer and
@@ -47,8 +53,8 @@ probably rely on its output. So, what, we should maintain two ways of showing th
 font will look? That will make maintainership harder, not easier.
 
 Let me give you an example: COLR/CPAL, an emoji (color) font format. I was so ready to work on this.
-But working on it is going to be a nightmare. I'm still willing to do it for pay of course, but the
-UI elements alone are trying.  Then we get into the fact that FontForge uses its own custom
+But working on it is going to be a nightmare. ~~I'm still willing to do it for pay of course, but~~
+The UI elements alone are trying.  Then we get into the fact that FontForge uses its own custom
 rasterizer to generate glyphs in the FontView, and so that needs either a total rewrite, or a
 replacement with FreeType. It of course doesn't support color or layering. So am I to integrate a
 library, or for some reason write a color font rasterizer when many exist? And let's not even get
