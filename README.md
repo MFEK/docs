@@ -54,11 +54,11 @@ To see who wrote an MFEK module, check its `AUTHORS` file. The two main authors 
 * [`icu-data.rlib`](https://github.com/MFEK/icu-data.rlib) (Unicode ICU data without C libicu, currently only encodings)
 * [`ipc.rlib`](https://github.com/MFEK/ipc.rlib) (_very_ basic inter-process communication functions)
 * [`math.rlib`](https://github.com/MFEK/math.rlib) (implements algorithms for MFEKstroke: Pattern-Along-Path, Variable/Constant Width Stroke, etc.)
+* [`spiro.rlib`](https://github.com/MFEK/spiro.rlib) (a Rust implementation of Raph Levien's [Spiro](https://github.com/raphlinus/spiro) curve type)
 
 ### Planned
 
 * libskef (Port of @skef's &laquo;Expand Stroke&raquo; feature to a reusable C API. Will likely also require `SplineSet` type from FontForge.)
-* spiro-rs (Port of libspiro to Rust, probably will be done via `bindgen`)
 
 ## Flow
 
