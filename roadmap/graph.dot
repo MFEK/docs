@@ -8,7 +8,7 @@ feaparser[style=dashed];
 MFEKmetadata[style=dashed];
 MFEKufo[style=dotted];
 MFEKdesignspace[style=dotted];
-MFEKpathops[style=dotted];
+MFEKpathops[style=dashed];
 MFEKopentype[style=dotted];
 MFEKmetrics[style=dotted];
 MFEKexport[style=dotted];
@@ -81,8 +81,8 @@ imgui -> SDL2 -> vulkan;
 imgui -> freetype2;
 //"MFEKufo" -> "MFEKabout" [penwidth=3.5];
 "MFEKabout";// -> "imgui-skia\n-renderer"; //rlib
-"glifparser" -> "spiro" [style=dashed]; //rlib
-spiro[style=dashed];
+"glifparser" -> "spiro"; //rlib
+spiro;
 spiro -> spiroinner; //rlib
 "MFEKmetrics" -> "skulpin" [color="#cc0000"]; //rlib
 "MFEKmetrics" -> "harfbuzz" [color="#cc0000"]; //rlib
