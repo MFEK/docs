@@ -55,6 +55,8 @@ To see who wrote an MFEK module, check its `AUTHORS` file. The two main authors 
 * [`ipc.rlib`](https://github.com/MFEK/ipc.rlib) (_very_ basic inter-process communication functions)
 * [`math.rlib`](https://github.com/MFEK/math.rlib) (implements algorithms for MFEKstroke: Pattern-Along-Path, Variable/Constant Width Stroke, etc.)
 * [`spiro.rlib`](https://github.com/MFEK/spiro.rlib) (a Rust implementation of Raph Levien's [Spiro](https://github.com/raphlinus/spiro) curve type)
+* [`feaparser.rlib`](https://github.com/MFEK/feaparser.rlib) (an OpenType Feature File Format [`.fea`] parser)
+* [`glifrenderer.rlib`](https://github.com/MFEK/glifrenderer.rlib) (a Skia renderer focused on rendering font glyphs in a pleasing way)
 
 ### Planned
 
